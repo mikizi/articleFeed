@@ -1,0 +1,16 @@
+/* Small screens */
+@media all and (max-width: 700px) {
+  .aspectratio {
+    padding-top: 0;
+    width: 100%;
+  }
+  .row {
+    .cell {
+      flex-basis: 100%;
+      flex-direction: column;
+      & > * > * {
+        justify-content: left;
+      }
+    }
+  }
+}
