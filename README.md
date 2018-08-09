@@ -28,7 +28,13 @@ npm run build
 And finally
 
 ```
-npm start and open the url http://127.0.0.1:8080/
+npm start   http://127.0.0.1:8080/
+```
+
+open the url
+
+```
+http://127.0.0.1:8080/
 ```
 
 ## Built With
