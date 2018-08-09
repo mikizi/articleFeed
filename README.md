@@ -60,7 +60,7 @@ example:
 
 ## Authors
 
-* **Michael Ziso** - [My GitHub](https://github.com/mikizi)
+[Michael Ziso](https://github.com/mikizi)
 
 ## License
 
