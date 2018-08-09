@@ -1,17 +1,17 @@
 export default class Taboola {
     constructor() {
         this.taboolaApi = 'http://api.taboola.com';
-        this.protocolVersion = '1.1';
+        this.protocolVersion = '1.0';
         this.format = 'json';
         this.publisherId = 'taboola-templates';
         this.methodName = 'recommendations.get';
         this.appType = 'desktop';
         this.appkey = 'f9040ab1b9c802857aa783c469d0e0ff7e7366e4';
         this.ResCount = '8';
-        this.sourceTyp = 'text';
-        this.sourceId = 'demo';
+        this.sourceTyp = 'video';
+        this.sourceId = '214321562187';
         this.userSession = 'init';
-        this.sourceUrl = 'http://test.com';
+        this.sourceUrl = 'http://www.site.com/videos/214321562187.html';
 
         this.showSponserd = true;
         this.ratio = '16:9'; //16:9 , 4:3
@@ -21,7 +21,7 @@ export default class Taboola {
 
         this.restApiUrl = `${this.taboolaApi}/${this.protocolVersion}/${this.format}/${this.publisherId}/${this.methodName};`;
         this.params = `?app.type=${this.appType}&app.apikey=${this.appkey}&rec.count=${this.ResCount}&source.type=${this.sourceTyp}&source.id=${this.sourceId}&user.session=${this.userSession}&source.url=${this.sourceUrl}`;
-    }
+        }
 
     // Async/Await requirements: Latest Chrome/FF browser or Babel: https://babeljs.io/docs/plugins/transform-async-to-generator/
     // Fetch requirements: Latest Chrome/FF browser or Github fetch polyfill: https://github.com/github/fetch
@@ -64,8 +64,9 @@ export default class Taboola {
 
     buildComponents() {
         return this.data.map(item => {
+            const origin = item.origin === 'sponsored' ? '_blank' : '_self';
             return `<div class="cell">
-            <a target="_blank" href="${item.url}" >
+            <a target="${origin}" href="${item.url}" >
                 <div class="aspectratio" data-ratio="${this.ratio}">
                     ${this.getComponent(item)}
                 </div>
@@ -92,7 +93,7 @@ export default class Taboola {
 
         const image = imageSrc[0].url;
         return `<div class="img-placeholder">
-                    <img src="${image}" alt="${alt}"/>
+                    <img src="${image}" alt="${alt}" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/en/3/3c/Taboola_logo.png';"/>
                 </div>`;
     }
     // for future using video component - beta version - need some custom fix after we will know data structure
