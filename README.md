@@ -5,7 +5,9 @@ Using this widget you can:
 * any amount of articles.
 * set article size of 4:3 or 16:9 
 * set sponsored or internal articles.
-* etc
+* this is a responsive layout.
+* using only vanila js code (es5 ,es6 and even es7)
+
 
 ## Getting Started
 
