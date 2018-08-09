@@ -42,7 +42,7 @@ export default class Taboola {
     Create(data) {
         this.setData(data);
         this.buildGrid();
-        const element = document.querySelector('.content');
+        const element = document.querySelector('.Taboola-grid-place-holder');
         if (!element) {
             return 'Error! no parent element';
         }
