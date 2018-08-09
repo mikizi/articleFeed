@@ -15,7 +15,7 @@ Clone this project to your environment
 
 ### Installing
 
-First you will need to 
+First you will need to open terminal in the project root folder and write on cmd:
 
 ```
 npm run install
