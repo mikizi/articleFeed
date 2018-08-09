@@ -19,7 +19,7 @@ First you will need to
 npm run install
 ```
 
-create build folder inside the project then:
+create  **build folder** inside the project then:
 
 ```
 npm run build
